@@ -2,7 +2,7 @@
 
 Figma adalah aplikasi desain grafis berbasis web yang dapat digunakan untuk membuat desain visual, prototipe interaktif, dan tata letak halaman web. Figma menawarkan banyak keuntungan, seperti kemampuan untuk berkolaborasi secara real-time, memperbarui desain secara otomatis, dan integrasi yang mudah dengan alat-alat pengembangan web.
 
-Berikut adalah **3 Point** dari materi Version Control and Branch Management
+Berikut adalah **3 Point** dari materi Figma Introduction Interface Dimension
 
 ## **1. Kemampuan Berkolaborasi Real-Time**
 
