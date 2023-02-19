@@ -32,6 +32,7 @@ Berikut adalah beberapa git command.
 - git branch - -list: melihat list branch.
 - git branch -D <nama_branch>: delete branch.
 - git merge: terdapat 2 flag yakni fast forward (graph dijadikan 1 line ) dan no fast forward (graph masih terlihat cabangnya).
+- git checkout: untuk pindah branch
 
 ## **3. Gitflow**
 
