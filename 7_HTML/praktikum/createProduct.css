@@ -1,0 +1,24 @@
+.input-group {
+  margin-bottom: 6px;
+}
+
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: 400;
+  margin: 19px 0px 6px 0px;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 400;
+  margin: 6px 0px;
+}
+
+input#product-price {
+  width: 47px;
+  height: 18px;
+}

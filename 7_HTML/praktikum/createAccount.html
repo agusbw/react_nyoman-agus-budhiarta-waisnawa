@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./createAccount.css" />
+    <title>Create Account</title>
+  </head>
+  <body>
+    <h1>Create Account</h1>
+    <h2>Detail Form</h2>
+    <form action="/" method="POST">
+      <div class="input-group">
+        <label for="first-name">First name :</label> <br />
+        <input type="text" id="first-name" name="first_name" required />
+      </div>
+      <div class="input-group">
+        <label for="last-name">Last name :</label> <br />
+        <input type="text" id="last-name" name="last_name" required />
+      </div>
+      <div class="input-group">
+        <label for="username">Username :</label> <br />
+        <input type="text" id="username" name="username" required />
+      </div>
+      <div class="input-group">
+        <label for="email">Email :</label> <br />
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div class="input-group">
+        <p>Gender :</p>
+        <div class="radio">
+          <input
+            type="radio"
+            id="radio-male"
+            name="gender"
+            value="male"
+            required
+          />
+          <label for="radio-male">Male</label>
+        </div>
+        <div class="radio">
+          <input type="radio" id="radio-female" name="gender" value="female" />
+          <label for="radio-female">Female</label>
+        </div>
+        <div class="radio">
+          <input
+            type="radio"
+            id="radio-other-gender"
+            name="gender"
+            value="other"
+          />
+          <label for="radio-other-gender">Other</label>
+        </div>
+      </div>
+      <div class="input-group">
+        <label for="address">Address :</label> <br />
+        <input type="text" id="address" name="address" required />
+      </div>
+      <div class="input-group">
+        <label for="second-address">Address 2 :</label> <br />
+        <input type="text" id="second-address" name="second_address" required />
+      </div>
+      <div class="input-group">
+        <p>Nasionality :</p>
+        <br />
+        <label for="nasionality">Nasionality</label><br />
+        <select id="nasionality" name="nasionality" required>
+          <option value=""></option>
+          <option value="id">Indonesia</option>
+          <option value="usa">USA</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <p>Language Spoken :</p>
+        <div class="checkbox"></div>
+        <div class="checkbox">
+          <input
+            type="checkbox"
+            id="checkbox-idn"
+            value="bahasa"
+            name="lang1"
+          />
+          <label for="checkbox-idn">Bahasa Indonesia</label>
+        </div>
+        <div class="checkbox">
+          <input
+            type="checkbox"
+            id="checkbox-en"
+            value="english"
+            name="lang2"
+          />
+          <label for="checkbox-en">English</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="checkbox-other-lang" name="lang3" />
+          <label for="checkbox-other-lang" value="other">Other</label>
+        </div>
+      </div>
+      <button type="submit">Create Account</button>
+    </form>
+  </body>
+</html>

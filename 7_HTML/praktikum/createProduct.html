@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./createProduct.css" />
+    <title>Create Product</title>
+  </head>
+  <body>
+    <h1>Create Product</h1>
+    <h2>Detail Product</h2>
+    <form action="/" method="POST">
+      <div class="input-group">
+        <label for="product-name">Product Name :</label> <br />
+        <input
+          type="text"
+          id="product-name"
+          name="product_name"
+          minlength="6"
+          maxlength="50"
+          required
+        />
+      </div>
+      <div class="input-group">
+        <label for="product-category">Product Category :</label> <br />
+        <select id="product-category" name="product_category" required>
+          <option value=""></option>
+          <option value="man">Man</option>
+          <option value="woman">Woman</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <p>Product Freshness :</p>
+        <div class="radio">
+          <input
+            type="radio"
+            id="radio-brand-new"
+            name="product_freshness"
+            value="brandnew"
+            required
+          />
+          <label for="radio-brand-new">Brand New</label>
+        </div>
+        <div class="radio">
+          <input
+            type="radio"
+            id="radio-second-hand"
+            name="product_freshness"
+            value="secondhand"
+          />
+          <label for="radio-second-hand">Second Hand</label>
+        </div>
+        <div class="radio">
+          <input
+            type="radio"
+            id="radio-refurbished"
+            name="product_freshness"
+            value="refurbished"
+          />
+          <label for="radio-refurbished">Refurbished</label>
+        </div>
+      </div>
+      <div class="input-group">
+        <label for="product-image">Image of Product </label>
+        <input type="file" name="product_image" id="product-image" required />
+      </div>
+      <div class="input-group">
+        <label for="product-description">Additional Description</label> <br />
+        <textarea
+          name="product_description"
+          id="product-description"
+          cols="30"
+          rows="10"
+          required
+        ></textarea>
+      </div>
+      <div class="input-group">
+        <label for="product-price">Product price :</label> <br />
+        <input
+          id="product-price"
+          type="number"
+          placeholder="$100"
+          name="product_price"
+          required
+        />
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>

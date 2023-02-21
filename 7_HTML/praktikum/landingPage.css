@@ -1,0 +1,117 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+p {
+  font-family: "Times New Roman", Times, serif;
+}
+
+a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 400px;
+  line-height: 16px;
+  color: black;
+}
+
+.btn-primary {
+  padding: 9px 28px 12px 28px;
+  border: 1px solid black;
+}
+
+/** Navbar */
+nav {
+  border-bottom: 1px solid #7a7777;
+}
+
+nav p {
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: -0.32px;
+  margin-left: 16px;
+  color: hsl(210, 11%, 15%);
+}
+
+/** End Navbar */
+
+/** Hero  */
+#hero {
+  margin-left: 92px;
+}
+
+/* Jumbotron */
+#jumbotron p {
+  width: 594.64px;
+  height: 63.8px;
+  margin: 0px 0px 57.8px 0px;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+#jumbotron h1 {
+  width: 561.42px;
+  height: 125px;
+  margin: 116.2px 0px 0px 0px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 56px;
+}
+
+#jumbotron #action-button .btn-primary {
+  margin-right: 65px;
+}
+/* End Jumbotron */
+
+/* Hero Image */
+.image {
+  width: 636px;
+  height: 527px;
+  margin-top: 21.21px;
+}
+
+img {
+  width: 100%;
+}
+/* End Hero Image */
+
+/* Newsletter */
+#newsletter p {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 22px;
+}
+#newsletter p#newsletter-title {
+  margin-bottom: 15px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 24px;
+}
+
+#newsletter input {
+  display: block;
+  margin-bottom: 20px;
+  width: 503px;
+  height: 31px;
+}
+
+/* End newsletter */
+/** End Hero  */
+
+/** Footer */
+#footer {
+  height: 80px;
+  border-top: 1px solid black;
+  margin-top: 35px;
+}
+#footer .content {
+  margin-left: 92px;
+}
+/** End footer */
