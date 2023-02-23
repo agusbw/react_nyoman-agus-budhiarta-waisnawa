@@ -243,6 +243,9 @@ img {
   background-color: var(--primary-color);
   text-align: center;
 }
+#footer span {
+  color: var(--secondary-color);
+}
 /** End footer */
 
 /* Medium devices (tablet) */
