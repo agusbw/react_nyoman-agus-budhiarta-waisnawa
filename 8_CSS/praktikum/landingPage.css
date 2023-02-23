@@ -103,12 +103,13 @@ nav p {
 /* Hero Image */
 .image {
   display: flex;
-}
-
-img {
   justify-content: center;
   align-items: center;
   width: 250px;
+}
+
+img {
+  width: 100%;
 }
 /* End Hero Image */
 
@@ -270,9 +271,9 @@ img {
   /* Jumbrotron */
   #jumbotron {
     display: flex;
-    /* justify-content: space-around; */
     flex-direction: row;
     text-align: left;
+    padding: 80px 0px;
   }
 
   .content {
@@ -282,17 +283,15 @@ img {
     align-items: start;
     padding: 90px 20px;
     min-width: 400px;
-    width: 400px;
+    width: 600px;
     max-width: 700px;
     text-align: left;
   }
 
-  img {
-    justify-content: center;
-    align-items: center;
-    width: 400px;
-    max-width: 500px;
+  .image {
+    width: 500px;
   }
+
   /* End Jumbotron */
 
   /* link */
