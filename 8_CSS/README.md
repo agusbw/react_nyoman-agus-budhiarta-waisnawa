@@ -27,11 +27,11 @@ Perhatikan _code_ berikut!
 
 Kode CSS diatas menunjukkan macam-macam selector yang ada dalam CSS.
 
-Setiap selector tersebut memiliki "kekuatannya" masing-masing. Kekuatan selector dalam menentukan gaya yang akan digunakan pada elemen HTML yang dipilih. Hal ini disebut juga dengan istilah [CSS Specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity).
+Setiap selector tersebut memiliki "kekuatannya" masing-masing. Kekuatan selector akan menentukan gaya yang akan digunakan pada elemen HTML yang dipilih. Hal ini disebut juga dengan istilah [CSS Specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity).
 
-[CSS Specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) berfungsi ketika terdapat 2 atau lebih CSS Selector yang mentarget element yang sama. Ketika hal tersebut terjadi, CSS akan mengkalkulasikan berat dari masing-masing selector.
+[CSS Specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) berfungsi ketika terdapat dua atau lebih CSS Selector yang mentarget element yang sama. Ketika hal tersebut terjadi, CSS akan mengkalkulasikan berat dari masing-masing selector.
 
-Selector yang lebih spesifik akan menimpa selector yang lebih umum.
+**Note: Selector yang lebih spesifik akan menimpa selector yang lebih umum.**
 
 **HTML**
 
@@ -47,9 +47,7 @@ Selector yang lebih spesifik akan menimpa selector yang lebih umum.
         font-size: 30px;
       }
 
-Dengan kode CSS seperti diatas, element <p> akan memiliki _font size_ 30px dikarenakan selector ID lebih spesifik dari selector element.
-
-Untuk mempermudah perhitungan selector bisa gunakan [tools berikut⚒️](https://specificity.keegan.st/)
+Dengan kode CSS seperti diatas, element p akan memiliki _font size_ 30px dikarenakan selector ID lebih spesifik dari selector element. Untuk mempermudah perhitungan selector bisa gunakan [tools berikut⚒️](https://specificity.keegan.st/)
 
 ## **2. CSS Property dan Value**
 
