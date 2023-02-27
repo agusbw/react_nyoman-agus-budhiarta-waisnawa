@@ -38,7 +38,7 @@ addEventListener("DOMContentLoaded", () => {
         "The product name must be less than 25 letters";
     }
 
-    const isNonWordRegex = /\W/g;
+    const isNonWordRegex = /[!@#$%^&*(),.?":{}|<>'\\/\-_+=`~\]\[;]/;
     if (isNonWordRegex.test(productName.value)) {
       productName.classList.add("is-invalid");
       productNameFeedback.textContent =
