@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Create Product</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <style>
+      input[type="file"]::file-selector-button {
+        background: #316cf4;
+        color: #fff;
+        cursor: pointer;
+      }
+      input[type="file"]:hover::file-selector-button {
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand fw-semibold" href="#">Simple Header</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ms-auto">
+            <a
+              class="nav-link btn btn-primary text-light"
+              aria-current="page"
+              href="#"
+              >Home</a
+            >
+            <a class="nav-link text-primary" href="#">Features</a>
+            <a class="nav-link text-primary" href="#">Pricing</a>
+            <a class="nav-link text-primary" href="#">FAQs</a>
+            <a class="nav-link text-primary" href="#">About</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row mt-4 justify-content-center">
+        <div class="col-lg-8 text-center">
+          <img src="img/bootstrap-logo.png" alt="" width="71.53px" />
+          <p class="fs-3 fw-bold my-2">Create Product</p>
+          <p>
+            Below is an example form built entirely with Bootstrap’s form
+            controls. Each required form group has a validation state that can
+            be triggered by attempting to submit the form without completing it.
+          </p>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-6 mt-4">
+          <p class="fs-4 fw-semibold">Detail Product</p>
+          <form action="" method="POST" class="needs-validation" novalidate>
+            <div class="mb-3">
+              <label for="productName" class="form-label">Product Name</label>
+              <input
+                type="text"
+                class="form-control w-50"
+                name="product_name"
+                id="productName"
+                minlength="6"
+                maxlength="50"
+                required
+              />
+              <div class="pt-1 text-danger" id="productNameFeedback"></div>
+            </div>
+            <div class="mb-3">
+              <label for="productCategory" class="form-label"
+                >Product Category</label
+              >
+              <select
+                id="productCategory"
+                class="form-select w-25"
+                name="product_category"
+                required
+              >
+                <option disabled value="" selected>Choose</option>
+                <option value="Phone">Phone</option>
+                <option value="PC">PC</option>
+                <option value="Laptop">Laptop</option>
+              </select>
+              <div class="pt-1 text-danger" id="productCategoryFeedback"></div>
+            </div>
+            <div class="mb-3">
+              <label for="productImage" class="form-label"
+                >Image of Product</label
+              >
+              <input
+                class="form-control btn btn-outline-primary w-50 d-block"
+                type="file"
+                id="productImage"
+                name="product_image"
+                required
+              />
+              <div class="pt-1 text-danger" id="productImageFeedback"></div>
+            </div>
+            <div class="mb-3">
+              <p class="mb-0">Product Freshness</p>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="product_freshness"
+                  id="radio1"
+                  value="new"
+                  required
+                />
+                <label class="form-check-label" for="radio1"> Brand New </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="product_freshness"
+                  id="radio2"
+                  value="second"
+                  required
+                />
+                <label class="form-check-label" for="radio2">
+                  Second Hand
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="product_freshness"
+                  id="radio3"
+                  value="refurbished"
+                  required
+                />
+                <label class="form-check-label" for="radio3">
+                  Refurbished
+                </label>
+                <div
+                  class="pt-1 text-danger"
+                  id="productFreshnessFeedback"
+                ></div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="productDescription" class="form-label"
+                >Additional Description</label
+              >
+              <textarea
+                class="form-control"
+                id="productDescription"
+                style="height: 116px"
+                required
+              ></textarea>
+              <div
+                class="pt-1 text-danger"
+                id="productDescriptionFeedback"
+              ></div>
+            </div>
+            <div class="mb-3">
+              <label for="productPrice" class="form-label">Price</label>
+              <input
+                type="number"
+                class="form-control"
+                id="productPrice"
+                placeholder="$ 1"
+                required
+              />
+              <div class="pt-1 text-danger" id="productPriceFeedback"></div>
+            </div>
+            <div
+              class="alert alert-success mx-auto"
+              role="alert"
+              id="dataAlert"
+            ></div>
+            <button
+              id="submitBtn"
+              type="submit"
+              class="btn btn-primary w-75 mx-auto d-block mt-5"
+              data-bs-toggle="tooltip"
+              data-bs-placement="top"
+              data-bs-custom-class="custom-tooltip"
+              data-bs-title="Make sure the data is correct!"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="ms-4">
+      <p class="fs-2 fw-semibold my-3 text-center">List Product</p>
+      <div class="table-responsive">
+        <table class="table w-75 table-striped" id="productForm">
+          <thead class="border-top">
+            <tr>
+              <th scope="col">No</th>
+              <th scope="col">Product Name</th>
+              <th scope="col">Product Category</th>
+              <th scope="col">Image of Product</th>
+              <th scope="col">Product Freshness</th>
+              <th scope="col">Additional Description</th>
+              <th scope="col">Product Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1001</td>
+              <td>Lorem</td>
+              <td>ipsum</td>
+              <td>dolor</td>
+              <td>Brand New</td>
+              <td>adipiscing</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>1002</td>
+              <td>Lorem</td>
+              <td>ipsum</td>
+              <td>dolor</td>
+              <td>Second Hand</td>
+              <td>adipiscing</td>
+              <td>10</td>
+            </tr>
+            <tr>
+              <td>1003</td>
+              <td>Lorem</td>
+              <td>ipsum</td>
+              <td>dolor</td>
+              <td>Brand New</td>
+              <td>adipiscing</td>
+              <td>20</td>
+            </tr>
+            <tr>
+              <td>1004</td>
+              <td>Lorem</td>
+              <td>ipsum</td>
+              <td>dolor</td>
+              <td>Refushed</td>
+              <td>adipiscing</td>
+              <td>9</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="mb-1">
+        <input
+          type="text"
+          class="form-control w-25"
+          id="searchProduct"
+          placeholder="Search Product by Name"
+        />
+      </div>
+      <div class="input-group mb-3">
+        <button class="btn btn-primary rounded-0" type="button">
+          Deletion
+        </button>
+        <button class="btn btn-outline-primary rounded-0" type="button">
+          Search
+        </button>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
