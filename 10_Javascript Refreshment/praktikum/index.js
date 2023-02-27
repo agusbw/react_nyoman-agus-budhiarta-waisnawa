@@ -109,7 +109,6 @@ addEventListener("DOMContentLoaded", () => {
   // Cek apakah form sudah valid dengan menghitung jumlah class is-invalid
   const checkIsValid = () => {
     const invalids = document.querySelectorAll(".is-invalid");
-    console.log(invalids.length);
     if (invalids.length <= 0) {
       return true;
     }
