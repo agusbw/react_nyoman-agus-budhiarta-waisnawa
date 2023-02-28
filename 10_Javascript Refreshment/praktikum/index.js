@@ -131,7 +131,7 @@ addEventListener("DOMContentLoaded", () => {
       const product = {
         name: productName.value,
         category: productCategory.value,
-        image: "default",
+        image: productImage.value,
         freshness: productFreshness,
         description: productDescription.value,
         price: productPrice.value,
