@@ -61,8 +61,7 @@ addEventListener("DOMContentLoaded", () => {
     );
     const validatedImage = validateIsEmpty("product image", productImage);
 
-    // const isRadioChecked = radio1.checked || radio2.checked || radio3.checked;
-    var radiosArr = Array.from(radios);
+    const radiosArr = Array.from(radios);
     const isRadioChecked = radiosArr.some((radio) => radio.checked);
 
     if (validatedName.isEmpty) {
