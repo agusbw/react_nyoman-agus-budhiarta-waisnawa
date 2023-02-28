@@ -79,9 +79,9 @@ Pada tipe data object, yang diteruskan adalah reference, jika kita meneruskan re
 
 - Perhatikan pada kasus di atas, kita meneruskan reference yang berarti apabila kita mengubah nilai pada index di array b, maka nilai pada index di array a juga ikut berubah karena mengacu pada _reference_ yang sama.
 
-"_Lalu bagaimana caranya untuk salin nilainya saja sehingga tidak mengacu pada \_reference_ yang sama?\_"
+"_Lalu bagaimana caranya untuk salin nilainya dan membuat array atau object baru?_"
 
-Pada JavaScript, kita dapat menyalin value dari array ataupun object dengan 2 cara yakni dengan _destructuring_ dan _spread syntax_ ✨
+Pada JavaScript, kita dapat menyalin value dari array ataupun object dengan dua cara yakni dengan _destructuring_ dan _spread syntax_ ✨
 
 - _Destructuring_ adalah ekspresi pada JavaScript untuk menyalin nilai pada array atau property dalam object ke dalam variable lain.
 - _Spread syntax_ (...) digunakan ketika ingin mengambil semua nilai dari array atau property dari object ke dalam daftar, biasanya array atau object baru.
@@ -134,5 +134,41 @@ Contoh _code_ sederhananya.
                           price: "1000"
                           }
                           */
+
+- _Spread syntax_ melakukan _deep copies_ dari data apabila data tersebut tidak nested. **Jika data nested, maka _spread syntax_ akan melakukan _deep copy_ dari data teratas dan melakukan _shallow copy_ dari nested data**.
+
+  Contoh kasus & penjelasan:
+
+      let a = {
+        name: {
+          firstName: 'Agus',
+          lastName: 'BW',
+        },
+        gender: 'male',
+      };
+      let b = {
+        ...a,
+        age: 20,
+      };
+
+      //nested data
+      b.name.lastName = 'Budhiarta';
+      console.log(a.name.lastName); //Output: Budhiarta
+      console.log(b.name.lastName); //Output: Budhiarta
+
+      //data teratas (top most data)
+      b.gender = "man";
+      console.log(a.gender); //Output: male
+      console.log(b.gender); //Output: man
+
+      //cara spread agar semua deep copy (beda reference)
+      let c = {
+        ...a, age:20
+      }
+      //lakukan spread pada nested datanya juga
+      c.name = {...a.name};
+      c.name.firstName = "Nyoman";
+      console.log(c.name.firstName); //Output: Nyoman
+      console.log(a.name.firstName); //Output: Agus
 
 Learning source: https://developer.mozilla.org/en-US/docs/Web/JavaScript
