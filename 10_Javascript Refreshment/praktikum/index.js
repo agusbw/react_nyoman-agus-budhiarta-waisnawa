@@ -1,5 +1,6 @@
 addEventListener("DOMContentLoaded", () => {
   //declare semua element input
+  const form = document.getElementById("form");
   const submitButton = document.getElementById("submitBtn");
   const productName = document.getElementById("productName");
   const productPrice = document.getElementById("productPrice");
@@ -7,6 +8,14 @@ addEventListener("DOMContentLoaded", () => {
   const productCategory = document.getElementById("productCategory");
   const radios = document.querySelectorAll('input[type="radio"]');
   const productImage = document.getElementById("productImage");
+  const inputs = [
+    productName,
+    productPrice,
+    productDescription,
+    productCategory,
+    productImage,
+    ...radios,
+  ];
 
   // declare semua element feedback (element untuk menampilkan pesan error)
   const productNameFeedback = document.getElementById("productNameFeedback");
@@ -32,17 +41,14 @@ addEventListener("DOMContentLoaded", () => {
     if (node.value == "") {
       return {
         message: `The ${fieldName} field must be filled in`,
-        isEmpty: false,
-      };
-    } else {
-      return {
-        message: "",
         isEmpty: true,
       };
     }
+    return false;
   };
 
-  const validateForm = () => {
+  // Validasi form apakah sudah terisi semua
+  const validateAllInputFilled = () => {
     const validatedName = validateIsEmpty("product name", productName);
     const validatedPrice = validateIsEmpty("product price", productPrice);
     const validatedDescription = validateIsEmpty(
@@ -59,27 +65,27 @@ addEventListener("DOMContentLoaded", () => {
     var radiosArr = Array.from(radios);
     const isRadioChecked = radiosArr.some((radio) => radio.checked);
 
-    if (!validatedName.isEmpty) {
+    if (validatedName.isEmpty) {
       productName.classList.add("is-invalid");
       productNameFeedback.textContent = validatedName.message;
     }
 
-    if (!validatedPrice.isEmpty) {
+    if (validatedPrice.isEmpty) {
       productPrice.classList.add("is-invalid");
       productPriceFeedback.textContent = validatedPrice.message;
     }
 
-    if (!validatedDescription.isEmpty) {
+    if (validatedDescription.isEmpty) {
       productDescription.classList.add("is-invalid");
       productDescriptionFeedback.textContent = validatedDescription.message;
     }
 
-    if (!validatedCategory.isEmpty) {
+    if (validatedCategory.isEmpty) {
       productCategory.classList.add("is-invalid");
       productCategoryFeedback.textContent = validatedCategory.message;
     }
 
-    if (!validatedImage.isEmpty) {
+    if (validatedImage.isEmpty) {
       productImage.classList.add("is-invalid");
       productImageFeedback.textContent = validatedImage.message;
     }
@@ -91,17 +97,18 @@ addEventListener("DOMContentLoaded", () => {
       productFreshnessFeedback.textContent = "Please select one of the options";
     }
 
+    // return true jika semua input sudah valid
     return (
-      validatedName.isEmpty &&
-      validatedPrice.isEmpty &&
-      validatedDescription.isEmpty &&
-      validatedCategory.isEmpty &&
-      validatedImage.isEmpty &&
+      !validatedName.isEmpty &&
+      !validatedPrice.isEmpty &&
+      !validatedDescription.isEmpty &&
+      !validatedCategory.isEmpty &&
+      !validatedImage.isEmpty &&
       isRadioChecked
     );
   };
 
-  // Cek apakah form sudah valid dengan menghitung jumlah class is-invalid
+  // Cek apakah form sudah valid dengan menghitung jumlah class is-invalid (untuk enable/disable button)
   const checkIsValid = () => {
     const invalids = document.querySelectorAll(".is-invalid");
     if (invalids.length <= 0) {
@@ -111,9 +118,10 @@ addEventListener("DOMContentLoaded", () => {
   };
 
   //Submit form
-  submitButton.addEventListener("click", (e) => {
+  form.addEventListener("submit", (e) => {
     e.preventDefault();
-    if (validateForm()) {
+    // Cek apakah form sudah valid
+    if (validateAllInputFilled() && checkIsValid()) {
       let productFreshness;
       radios.forEach((radio) => {
         radio.checked === true
@@ -144,82 +152,40 @@ addEventListener("DOMContentLoaded", () => {
     return false;
   });
 
-  //Remove error altert ketika input diisi, dan cek apakah form sudah valid (tidak ada simbol dan tidak lebih dari 25 huruf)
-  productName.addEventListener("input", () => {
-    productName.classList.remove("is-invalid");
-    productNameFeedback.textContent = "";
+  //Remove error altert ketika input diisi
+  inputs.forEach((input) => {
+    if (input.type !== "radio") {
+      input.addEventListener("input", () => {
+        input.classList.remove("is-invalid");
+        input.nextElementSibling.textContent = "";
+        if (input.id === "productName") {
+          if (productName.value.length > 25) {
+            productName.classList.add("is-invalid");
+            productNameFeedback.textContent =
+              "The product name must not exceed 25 characters.";
+          }
 
-    if (productName.value.length > 25) {
-      productName.classList.add("is-invalid");
-      productNameFeedback.textContent =
-        "The product name must be less than 25 letters";
+          const isNonWordRegex = /[!@#$%^&*(),.?":{}|<>'\\/\-_+=`~\]\[;]/;
+          if (isNonWordRegex.test(productName.value)) {
+            productName.classList.add("is-invalid");
+            productNameFeedback.textContent =
+              "Product name must not contain symbols.";
+          }
+        }
+        checkIsValid()
+          ? (submitButton.disabled = false)
+          : (submitButton.disabled = true);
+      });
+    } else {
+      input.addEventListener("input", () => {
+        radios.forEach((radio, key) => {
+          radio.classList.remove("is-invalid");
+        });
+        radios[2].nextElementSibling.nextElementSibling.textContent = "";
+        checkIsValid()
+          ? (submitButton.disabled = false)
+          : (submitButton.disabled = true);
+      });
     }
-
-    const isNonWordRegex = /[!@#$%^&*(),.?":{}|<>'\\/\-_+=`~\]\[;]/;
-    if (isNonWordRegex.test(productName.value)) {
-      productName.classList.add("is-invalid");
-      productNameFeedback.textContent =
-        "Product name must not contain symbols.";
-    }
-
-    if (productName.value === "") {
-      productName.classList.remove("is-invalid");
-      productNameFeedback.textContent = "";
-    }
-
-    checkIsValid()
-      ? (submitButton.disabled = false)
-      : (submitButton.disabled = true);
-  });
-
-  //Remove error altert ketika input diisi
-  productPrice.addEventListener("input", () => {
-    productPrice.classList.remove("is-invalid");
-    productPriceFeedback.textContent = "";
-
-    checkIsValid()
-      ? (submitButton.disabled = false)
-      : (submitButton.disabled = true);
-  });
-
-  //Remove error altert ketika input diisi
-  productDescription.addEventListener("input", () => {
-    productDescription.classList.remove("is-invalid");
-    productDescriptionFeedback.textContent = "";
-
-    checkIsValid()
-      ? (submitButton.disabled = false)
-      : (submitButton.disabled = true);
-  });
-
-  //Remove error altert ketika input diisi
-  productCategory.addEventListener("input", () => {
-    productCategory.classList.remove("is-invalid");
-    productCategoryFeedback.textContent = "";
-
-    checkIsValid()
-      ? (submitButton.disabled = false)
-      : (submitButton.disabled = true);
-  });
-
-  //Remove error altert ketika input diisi
-  productImage.addEventListener("input", () => {
-    productImage.classList.remove("is-invalid");
-    productImageFeedback.textContent = "";
-
-    checkIsValid()
-      ? (submitButton.disabled = false)
-      : (submitButton.disabled = true);
-  });
-
-  //Remove error altert ketika input diisi
-  radios.forEach((radio) => {
-    radio.addEventListener("input", () => {
-      radios.forEach((radio) => radio.classList.remove("is-invalid"));
-      productFreshnessFeedback.textContent = "";
-      checkIsValid()
-        ? (submitButton.disabled = false)
-        : (submitButton.disabled = true);
-    });
   });
 });
