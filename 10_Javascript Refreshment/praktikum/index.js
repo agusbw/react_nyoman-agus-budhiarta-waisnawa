@@ -110,10 +110,7 @@ addEventListener("DOMContentLoaded", () => {
   // Cek apakah form sudah valid dengan menghitung jumlah class is-invalid (untuk enable/disable button)
   const checkIsValid = () => {
     const invalids = document.querySelectorAll(".is-invalid");
-    if (invalids.length <= 0) {
-      return true;
-    }
-    return false;
+    return invalids.length <= 0;
   };
 
   //Submit form
@@ -148,7 +145,6 @@ addEventListener("DOMContentLoaded", () => {
     dataAlert.innerText = "";
     dataAlert.style.display = "none";
     submitButton.disabled = true;
-    return false;
   });
 
   //Remove error altert ketika input diisi
@@ -177,7 +173,7 @@ addEventListener("DOMContentLoaded", () => {
       });
     } else {
       input.addEventListener("input", () => {
-        radios.forEach((radio, key) => {
+        radios.forEach((radio) => {
           radio.classList.remove("is-invalid");
         });
         radios[2].nextElementSibling.nextElementSibling.textContent = "";

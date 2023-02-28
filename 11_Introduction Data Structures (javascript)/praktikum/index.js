@@ -110,10 +110,7 @@ addEventListener("DOMContentLoaded", () => {
   // Cek apakah form sudah valid dengan menghitung jumlah class is-invalid (untuk enable/disable button)
   const checkIsValid = () => {
     const invalids = document.querySelectorAll(".is-invalid");
-    if (invalids.length <= 0) {
-      return true;
-    }
-    return false;
+    return invalids.length <= 0;
   };
 
   function rederTable(products) {
@@ -129,11 +126,6 @@ addEventListener("DOMContentLoaded", () => {
           <td>${product.freshness}</td>
           <td>${product.description}</td>
           <td>${product.price}</td>
-          <td>
-              <button class="btn btn-danger btn-sm">
-                Delete
-              </button>
-          </td>
         </tr>
         `;
     });
@@ -182,7 +174,6 @@ addEventListener("DOMContentLoaded", () => {
     dataAlert.innerText = "";
     dataAlert.style.display = "none";
     submitButton.disabled = true;
-    return false;
   });
 
   //Remove error altert ketika input diisi
@@ -223,18 +214,6 @@ addEventListener("DOMContentLoaded", () => {
   });
 
   //Action button
-  //delete data berdasarkan index target (menggunakan event delegation)
-  document.querySelector("#tableBody").addEventListener("click", (e) => {
-    if (e.target.classList.contains("btn-danger")) {
-      e.target.parentElement.parentElement.remove();
-      dataAlert.innerHTML = `Data <strong>deleted</strong> succesfully`;
-      dataAlert.style.display = "block";
-      //set timeout untuk menghilangkan alert
-      setTimeout(() => {
-        dataAlert.style.display = "none";
-      }, 2000);
-    }
-  });
 
   //delete data terakhir yang dimasukkan user
   document.getElementById("deletion").addEventListener("click", () => {
@@ -242,7 +221,7 @@ addEventListener("DOMContentLoaded", () => {
     products.pop();
     //re-render table
     rederTable(products);
-    dataAlert.innerHTML = `Data <strong>deleted</strong> succesfully`;
+    dataAlert.innerHTML = `Latest data <strong>deleted</strong> succesfully`;
     dataAlert.style.display = "block";
     //set timeout untuk menghilangkan alert
     setTimeout(() => {
