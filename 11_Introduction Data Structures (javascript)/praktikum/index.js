@@ -232,7 +232,7 @@ addEventListener("DOMContentLoaded", () => {
   document.getElementById("search").addEventListener("click", () => {
     const searchParameter = document.getElementById("searchProduct").value;
     const searchResult = products.filter((product) =>
-      product.name.includes(searchParameter)
+      product.name.toLowerCase().includes(searchParameter.toLowerCase())
     );
     //re-render table
     rederTable(searchResult);
