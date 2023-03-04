@@ -90,7 +90,7 @@ Berikut adalah **9** karakteristik dari **clean code**:
 
   Perhatikan formatting dalam penulisan code, seperti baris kode yang berhubungan diletakkan berdekatan, dekatkan fungsi dengan penggunanya, perhatikan indentasi, dekatkan variable dengan penggunaannya, dan dapat memanfaaatkan bantuan formatting tools seperti prettier
 
-## **2. KISS & DRY**
+## **3. KISS & DRY**
 
 Clean code memiliki dua prinsip utama yaitu KISS _(Keep It Simple Stupid)_ dan DRY _(Don't Repeat Yourself)_:
 
