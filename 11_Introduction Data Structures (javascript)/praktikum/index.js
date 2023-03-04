@@ -35,9 +35,10 @@ const products = [];
 
 /**
  * Validasi input kosong, akan mengirim object dengan message dan isEmpty
+ *
  * @param {string} fieldName - Nama field yang dicek
  * @param {node} inputNode = Node dari element input yang dicek
- * @return Object
+ * @return {Object} - object alert message dan isEmpty
  */
 function validateIsEmpty(fieldName, inputNode) {
   //Cek apakah value input kosong
@@ -53,7 +54,11 @@ function validateIsEmpty(fieldName, inputNode) {
   };
 }
 
-// Validasi form apakah sudah terisi semua
+/**
+ * fungsi untuk show alert pada input yang kosong
+ *
+ *  @returns {boolean} apakah semua input terisi/tidak
+ */
 function validateAllInputsFilled() {
   const validatedName = validateIsEmpty("product name", productName);
   const validatedPrice = validateIsEmpty("product price", productPrice);
@@ -113,7 +118,11 @@ function validateAllInputsFilled() {
   );
 }
 
-// fungsi untuk check form sudah valid dengan menghitung jumlah class is-invalid
+/**
+ * fungsi untuk check form sudah valid dengan menghitung jumlah class is-invalid
+ *
+ * @returns {boolean} apakah form valid/tidak
+ */
 function checkIsValid() {
   const invalidClassses = document.querySelectorAll(".is-invalid");
   return invalidClassses.length <= 0;
@@ -121,6 +130,7 @@ function checkIsValid() {
 
 /**
  * Fungsi untuk merender tabel
+ *
  * @param {Array} products - Property array products.
  */
 function rederTable(products) {
@@ -141,6 +151,11 @@ function rederTable(products) {
   });
 }
 
+/**
+ * Fungsi untuk menampilkan alert
+ *
+ * @param {string} message - message pada alert
+ */
 function showAlert(message) {
   const dataAlert = document.querySelector("#dataAlert");
   const alertTimeout = 2000;
@@ -189,6 +204,7 @@ form.addEventListener("submit", (e) => {
   }
   submitButton.disabled = true;
 });
+
 //Remove error altert ketika input diisi
 inputs.forEach((input) => {
   //cek apakah input tipe radio button atau tidak
@@ -235,8 +251,9 @@ inputs.forEach((input) => {
 
 /**
  * Fungsi untuk search product
- * @param {string} params
- * @returns
+ *
+ * @param {string} params - keyword pencarian
+ * @returns {Array} - array hasil pencarian
  */
 function searchProduct(params) {
   return products.filter((product) =>
