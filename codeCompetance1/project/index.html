@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Plantify</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./img/logo.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+      <div class="container">
+        <a class="navbar-brand" href="#"
+          ><img src="./img/logo.png" alt="Logo"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ms-auto">
+            <a class="nav-link active" aria-current="page" href="#jumbotron"
+              >Home</a
+            >
+            <a class="nav-link" href="#">Activity</a>
+            <a class="nav-link" href="#contact">Contact</a>
+            <a class="nav-link" href="#link">Links</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="jumbotron" id="jumbotron">
+      <div class="col-lg-8">
+        <h1 class="display-4 fw-semibold">Where Nature and Technology Meet.</h1>
+        <p class="lead">
+          Join Plantify in planting trees and creating a better world. Our
+          easy-to-use platform makes it simple to make a positive impact,
+          whether you're in the city or the countryside.
+        </p>
+        <hr class="my-4" />
+        <p>
+          By planting trees with us, you can help combat climate change and
+          improve communities around the world. Let's work together to create a
+          healthier planet for all.
+        </p>
+        <a class="btn button-primary" href="#" role="button">Learn more</a>
+      </div>
+    </div>
+    <div class="contact-us" id="contact">
+      <div class="row justify-content-center g-5">
+        <div class="col-lg-7">
+          <h2>Contact us</h2>
+          <p class="pt-3">
+            We value your feedback and are committed to providing excellent
+            customer service. If you have any questions or comments about our
+            tree planting program, please don't hesitate to contact us. Our team
+            is always available to assist you and we strive to respond to all
+            inquiries within 24 hours. You can reach us by filling out the
+            contact form!.
+          </p>
+        </div>
+        <div class="col-lg-5">
+          <form class="row g-3" id="form">
+            <div class="col-md-6">
+              <label for="firstname" class="form-label">First Name*</label>
+              <input type="text" class="form-control" id="firstname" required />
+            </div>
+            <div class="col-md-6">
+              <label for="lastname" class="form-label">Last Name</label>
+              <input type="text" class="form-control" id="lastname" />
+            </div>
+            <div class="col-md-12">
+              <label for="email" class="form-label">Email*</label>
+              <input type="email" class="form-control" id="email" required />
+            </div>
+            <div class="col-md-12">
+              <label for="message" class="form-label"
+                >What can we help you with?</label
+              >
+              <textarea class="form-control" id="message" rows="3"></textarea>
+            </div>
+            <div class="col-12 mt-3">
+              <button type="submit" class="btn button-primary">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="links" id="link">
+      <div class="row g-5">
+        <div class="col-lg-5">
+          <p class="fw-bold fs-5">
+            Join our mission to create a healthier planet by planting trees with
+            Plantify today!
+          </p>
+          <form action="">
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control"
+                id="footerInput"
+                placeholder="Email Address"
+                required
+              />
+              <button
+                type="submit
+              "
+                class="btn button-primary"
+              >
+                Sign me up
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="col-lg-4">
+          <p class="fw-bold fs-5">Plantify Community Member</p>
+          <p>
+            Our Plantify community members are at the heart of our mission to
+            combat climate change and create a healthier planet. By planting
+            trees with us, they are taking action to make a positive impact on
+            the environment and their communities.
+          </p>
+          <a href="#">More about our community..</a>
+        </div>
+        <div class="col-lg-3">
+          <p class="fw-bold fs-5">Come Say Hello!</p>
+          <p>Jalan Villa Gading 1, No 9, Baktiseraga, Singaraja, Bali</p>
+          <p class="fw-bold text-success">(+62)81353270169</p>
+          <p class="fw-bold fs-5">Socials</p>
+          <div class="d-flex gap-3">
+            <a href="https://www.facebook.com/agus.budhiarta/" target="_blank"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="https://www.instagram.com/agus_bw/" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="https://www.linkedin.com/in/agusbw/" target="_blank"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/5d63499723.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
