@@ -22,7 +22,7 @@ function Greeting(props) {
 }
 ```
 
-- Pada contoh kode di atas, kita mendeklarasikan fungsi Greeting yang akan merender sebuah elemen <h1> yang berisi teks "Hello, " diikuti dengan props.name. Kita tidak perlu menentukan langkah-langkah detail tentang cara merender elemen tersebut, karena React-lah yang akan menangani semua detail tersebut.
+- Pada contoh kode di atas, kita mendeklarasikan fungsi Greeting yang akan merender sebuah elemen h1 yang berisi teks "Hello, " diikuti dengan props.name. Kita tidak perlu menentukan langkah-langkah detail tentang cara merender elemen tersebut, karena React-lah yang akan menangani semua detail tersebut.
 
 #### Component-Based
 
