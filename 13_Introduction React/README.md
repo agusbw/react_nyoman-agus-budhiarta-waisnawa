@@ -6,14 +6,15 @@ Berikut adalah **3 Point** dari materi _Introduction React **‼️**_
 
 ## **1. Kenapa Menggunakan React?**
 
-### React memiliki 3 keunggulan utama, yakni:
+### React memiliki 3 keunggulan utama yakni:
 
 #### Deklaratif
 
 - React menggunakan pendekatan deklaratif dalam menentukan cara UI ditampilkan.
   Dalam pemrograman deklaratif, Kita hanya menyatakan apa yang ingin dicapai, dan biarkan sistem (atau _library_) yang kita gunakan menentukan bagaimana cara mencapainya.
 - Pada React, ketika membuat UI dengan React, Kita hanya perlu fokus pada mendefinisikan bagaimana tampilannya (atau state) pada setiap waktu tertentu, dan tidak perlu terlalu memperhatikan bagaimana perubahan tersebut terjadi dari satu state ke state lainnya.
-  Contoh kode :
+
+Contoh kode :
 
 ```javascript
 function Greeting(props) {
