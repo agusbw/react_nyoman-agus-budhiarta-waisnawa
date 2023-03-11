@@ -1,0 +1,8 @@
+input[type="file"]::file-selector-button {
+  background: #316cf4;
+  color: #fff;
+  cursor: pointer;
+}
+input[type="file"]:hover::file-selector-button {
+  color: black;
+}
