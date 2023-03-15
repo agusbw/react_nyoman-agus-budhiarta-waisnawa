@@ -2,21 +2,21 @@ import { useEffect, useState } from "react";
 
 export default function ProductForm() {
   const [formData, setFormData] = useState({
-    productName: "",
-    productCategory: "",
-    productImage: "",
-    productDescription: "",
-    productPrice: "",
-    productFreshness: "",
+    name: "",
+    category: "",
+    image: "",
+    description: "",
+    price: "",
+    freshness: "",
   });
 
   const [formErrors, setFormErrors] = useState({
-    productName: "",
-    productCategory: "",
-    productImage: "",
-    productDescription: "",
-    productPrice: "",
-    productFreshness: "",
+    name: "",
+    category: "",
+    image: "",
+    description: "",
+    price: "",
+    freshness: "",
   });
 
   const [formValid, setFormValid] = useState(false);
@@ -32,16 +32,16 @@ export default function ProductForm() {
       [e.target.name]: "",
     });
 
-    if (e.target.name === "productName") {
+    if (e.target.name === "name") {
       if (e.target.value.length > 10) {
         setFormErrors({
           ...formErrors,
-          productName: "Product name must be less than 10 characters",
+          name: "Product name must be less than 10 characters",
         });
       } else {
         setFormErrors({
           ...formErrors,
-          productName: "",
+          name: "",
         });
       }
     }
@@ -51,30 +51,24 @@ export default function ProductForm() {
     e.preventDefault();
     setFormErrors({
       ...formErrors,
-      productName:
-        formData.productName === "" ? "Product name is required" : "",
-      productCategory:
-        formData.productCategory === "" ? "Product category is required" : "",
-      productImage:
-        formData.productImage === "" ? "Product image is required" : "",
-      productDescription:
-        formData.productDescription === ""
-          ? "Product description is required"
-          : "",
-      productPrice:
-        formData.productPrice === "" ? "Product price is required" : "",
-      productFreshness:
-        formData.productFreshness === "" ? "Product freshness is required" : "",
+      name: formData.name === "" ? "Product name is required" : "",
+      category: formData.category === "" ? "Product category is required" : "",
+      image: formData.image === "" ? "Product image is required" : "",
+      description:
+        formData.description === "" ? "Product description is required" : "",
+      price: formData.price === "" ? "Product price is required" : "",
+      freshness:
+        formData.freshness === "" ? "Product freshness is required" : "",
     });
 
     if (
       formValid &&
-      formData.productName !== "" &&
-      formData.productCategory !== "" &&
-      formData.productImage !== "" &&
-      formData.productDescription !== "" &&
-      formData.productPrice !== "" &&
-      formData.productFreshness !== ""
+      formData.name !== "" &&
+      formData.category !== "" &&
+      formData.image !== "" &&
+      formData.description !== "" &&
+      formData.price !== "" &&
+      formData.freshness !== ""
     ) {
       console.log(formData);
     }
@@ -83,12 +77,12 @@ export default function ProductForm() {
   //effect untuk mengecek apakah form valid atau tidak, jika valid maka tombol submit akan aktif
   useEffect(() => {
     if (
-      formErrors.productName === "" &&
-      formErrors.productCategory === "" &&
-      formErrors.productImage === "" &&
-      formErrors.productDescription === "" &&
-      formErrors.productPrice === "" &&
-      formErrors.productFreshness === ""
+      formErrors.name === "" &&
+      formErrors.category === "" &&
+      formErrors.image === "" &&
+      formErrors.description === "" &&
+      formErrors.price === "" &&
+      formErrors.freshness === ""
     ) {
       setFormValid(true);
     } else {
@@ -96,8 +90,8 @@ export default function ProductForm() {
     }
   }, [formErrors]);
 
-  const productCategory = ["Phone", "PC", "Laptop"];
-  const productCategoryOptions = productCategory.map((category, key) => (
+  const category = ["Phone", "PC", "Laptop"];
+  const productCategoryOptions = category.map((category, key) => (
     <option key={key} value={category}>
       {category}
     </option>
@@ -116,35 +110,33 @@ export default function ProductForm() {
           onSubmit={handleSubmit}
         >
           <div className="mb-3">
-            <label htmlFor="productName" className="form-label">
+            <label htmlFor="name" className="form-label">
               Product Name
             </label>
             <input
               type="text"
-              className={`form-control w-50 ${
-                formErrors.productName && "is-invalid"
-              }`}
-              name="productName"
-              id="productName"
+              className={`form-control w-50 ${formErrors.name && "is-invalid"}`}
+              name="name"
+              id="name"
               required=""
-              value={formData.productName}
+              value={formData.name}
               onChange={handleChange}
             />
             <div className="pt-1 text-danger" id="productNameFeedback">
-              {formErrors.productName}
+              {formErrors.name}
             </div>
           </div>
           <div className="mb-3">
-            <label htmlFor="productCategory" className="form-label">
+            <label htmlFor="category" className="form-label">
               Product Category
             </label>
             <select
-              id="productCategory"
+              id="category"
               className={`form-select w-25 ${
-                formErrors.productCategory && "is-invalid"
+                formErrors.category && "is-invalid"
               }`}
-              name="productCategory"
-              value={formData.productCategory}
+              name="category"
+              value={formData.category}
               onChange={handleChange}
             >
               <option disabled="" value="" defaultValue="">
@@ -153,25 +145,25 @@ export default function ProductForm() {
               {productCategoryOptions}
             </select>
             <div className="pt-1 text-danger" id="productCategoryFeedback">
-              {formErrors.productCategory}
+              {formErrors.category}
             </div>
           </div>
           <div className="mb-3">
-            <label htmlFor="productImage" className="form-label">
+            <label htmlFor="image" className="form-label">
               Image of Product
             </label>
             <input
               className={`form-control btn btn-outline-primary w-50 d-block ${
-                formErrors.productImage && "is-invalid"
+                formErrors.image && "is-invalid"
               }`}
               type="file"
-              id="productImage"
-              name="productImage"
-              value={formData.productImage}
+              id="image"
+              name="image"
+              value={formData.image}
               onChange={handleChange}
             />
             <div className="pt-1 text-danger" id="productImageFeedback">
-              {formErrors.productImage}
+              {formErrors.image}
             </div>
           </div>
           <div className="mb-3">
@@ -179,12 +171,12 @@ export default function ProductForm() {
             <div className="form-check">
               <input
                 className={`form-check-input ${
-                  formErrors.productFreshness && "is-invalid"
+                  formErrors.freshness && "is-invalid"
                 }`}
                 type="radio"
-                name="productFreshness"
+                name="freshness"
                 value="new"
-                checked={formData.productFreshness === "new"}
+                checked={formData.freshness === "new"}
                 onChange={handleChange}
               />
               <label className="form-check-label" htmlFor="radio1">
@@ -195,12 +187,12 @@ export default function ProductForm() {
             <div className="form-check">
               <input
                 className={`form-check-input ${
-                  formErrors.productFreshness && "is-invalid"
+                  formErrors.freshness && "is-invalid"
                 }`}
                 type="radio"
-                name="productFreshness"
+                name="freshness"
                 value="second"
-                checked={formData.productFreshness === "second"}
+                checked={formData.freshness === "second"}
                 onChange={handleChange}
               />
               <label className="form-check-label" htmlFor="radio2">
@@ -210,58 +202,56 @@ export default function ProductForm() {
             <div className="form-check">
               <input
                 className={`form-check-input ${
-                  formErrors.productFreshness && "is-invalid"
+                  formErrors.freshness && "is-invalid"
                 }`}
                 type="radio"
-                name="productFreshness"
+                name="freshness"
                 value="refurbished"
-                checked={formData.productFreshness === "refurbished"}
+                checked={formData.freshness === "refurbished"}
                 onChange={handleChange}
               />
               <label className="form-check-label" htmlFor="radio3">
                 Refurbished
               </label>
               <div className="pt-1 text-danger" id="productFreshnessFeedback">
-                {formErrors.productFreshness}
+                {formErrors.freshness}
               </div>
             </div>
           </div>
           <div className="mb-3">
-            <label htmlFor="productDescription" className="form-label">
+            <label htmlFor="description" className="form-label">
               Additional Description
             </label>
             <textarea
               className={`form-control ${
-                formErrors.productDescription && "is-invalid"
+                formErrors.description && "is-invalid"
               }`}
-              id="productDescription"
+              id="description"
               style={{ height: 116 }}
-              name="productDescription"
-              value={formData.productDescription}
+              name="description"
+              value={formData.description}
               onChange={handleChange}
             />
             <div className="pt-1 text-danger" id="productDescriptionFeedback">
               {" "}
-              {formErrors.productDescription}
+              {formErrors.description}
             </div>
           </div>
           <div className="mb-3">
-            <label htmlFor="productPrice" className="form-label">
+            <label htmlFor="price" className="form-label">
               Price
             </label>
             <input
               type="number"
-              className={`form-control ${
-                formErrors.productPrice && "is-invalid"
-              }`}
-              id="productPrice"
+              className={`form-control ${formErrors.price && "is-invalid"}`}
+              id="price"
               placeholder="$ 1"
-              name="productPrice"
-              value={formData.productPrice}
+              name="price"
+              value={formData.price}
               onChange={handleChange}
             />
             <div className="pt-1 text-danger" id="productPriceFeedback">
-              {formErrors.productPrice}
+              {formErrors.price}
             </div>
           </div>
           <button
