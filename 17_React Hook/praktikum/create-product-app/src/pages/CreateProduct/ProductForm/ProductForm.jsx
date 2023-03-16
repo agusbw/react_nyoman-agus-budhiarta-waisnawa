@@ -248,6 +248,7 @@ export default function ProductForm() {
                   value="new"
                   checked={formData.freshness === "new"}
                   onChange={handleChange}
+                  id="radio1"
                 />
                 <label className="form-check-label" htmlFor="radio1">
                   {" "}
@@ -264,6 +265,7 @@ export default function ProductForm() {
                   value="second"
                   checked={formData.freshness === "second"}
                   onChange={handleChange}
+                  id="radio2"
                 />
                 <label className="form-check-label" htmlFor="radio2">
                   Second Hand
@@ -279,6 +281,7 @@ export default function ProductForm() {
                   value="refurbished"
                   checked={formData.freshness === "refurbished"}
                   onChange={handleChange}
+                  id="radio3"
                 />
                 <label className="form-check-label" htmlFor="radio3">
                   Refurbished
