@@ -1,0 +1,13 @@
+.background {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  background-color: #37517e;
+}
+
+.text {
+  color: #ffffff;
+  font-weight: bold;
+}
