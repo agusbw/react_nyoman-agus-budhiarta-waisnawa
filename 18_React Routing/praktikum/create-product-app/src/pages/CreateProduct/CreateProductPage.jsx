@@ -2,9 +2,9 @@ import Header from "./Header/Header";
 import ProductForm from "./ProductForm/ProductForm";
 
 export default function CreateProduct() {
-  // useEffect(() => {
-  //   alert("Welcome!");
-  // }, []);
+  useEffect(() => {
+    alert("Welcome!");
+  }, []);
 
   return (
     <>
