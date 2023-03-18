@@ -4,7 +4,7 @@ Berikut adalah **3 Point** dari materi Event Handling **‼️**
 
 ## **1. State**
 
-State merupakan salah satu konsep dasar dalam React. State dapat digunakan untuk menyimpan data yang nantinya dapat diubah oleh pengguna. Ketika state diubah, React akan secara otomatis melakukan rendering ulang komponen yang menggunakan state tersebut. State adalah data private dalam sebuah komponen, ini berarti data state hanya tersedia di komponen tersebut dan tidak dapat diakses dari komponen lain.
+State adalah salah satu konsep dasar dalam React. State dapat digunakan untuk menyimpan data yang nantinya dapat diubah oleh pengguna. Ketika state diubah, React akan secara otomatis melakukan rendering ulang komponen yang menggunakan state tersebut. State adalah data private dalam sebuah komponen, ini berarti data state hanya tersedia di komponen tersebut dan tidak dapat diakses dari komponen lain.
 
 Contoh penggunaan state:
 
