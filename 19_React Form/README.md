@@ -15,14 +15,17 @@ Contoh penerapan form:
 - Registrasi
 - Memberikan feedback
 - Pengisian data
-- Lain sebagainya...
-  Form terdiri dari berbagai macam element input yang menangkap input user contohnya:
+- Lain sebagainya
+
+Form terdiri dari berbagai macam element input yang menangkap input user contohnya:
+
 - <input>
 - <textarea>
 - <select>
 - radio button
 - checkbox
-  Adapun element input lainnya dapat dicek [disini](https://www.w3schools.com/tags/tag_input.asp)
+
+Adapun element input lainnya dapat dicek [disini](https://www.w3schools.com/tags/tag_input.asp)
 
 ## **2. Uncontrolled 🆚 Controlled Input**
 
