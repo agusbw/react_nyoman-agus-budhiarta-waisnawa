@@ -19,9 +19,9 @@ Contoh penerapan form:
 
 Form terdiri dari berbagai macam element input yang menangkap input user contohnya:
 
-- <input>
-- <textarea>
-- <select>
+- input
+- textarea
+- select
 - radio button
 - checkbox
 
