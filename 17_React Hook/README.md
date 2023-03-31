@@ -2,7 +2,7 @@
 
 [React Hook](https://react.dev/reference/react) adalah fitur baru di React 16.8. Hook mengizinkan kita untuk menggunakan state dan fitur React yang lain tanpa perlu menulis sebuah kelas.
 
-Berikut adalah **3 Point** dari materi React Hook **‼️**
+Berikut adalah **3 Point** dari materi React Hooks **‼️**
 
 ## **1. Hook Pada React**
 
