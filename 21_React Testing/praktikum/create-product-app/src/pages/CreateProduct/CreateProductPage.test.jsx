@@ -77,7 +77,6 @@ describe("Form", () => {
     );
     const productName = screen.getByTestId("name-input");
     fireEvent.change(productName, { target: { value: "tasd@#{}" } });
-    //user click submit
     expect(screen.getByTestId("name-error").textContent).toBe(
       "Product name must not contain special characters"
     );
@@ -97,7 +96,6 @@ describe("Form", () => {
         value: "Lorem ipsum dolor, sit amet consectetur adipisicing elit",
       },
     });
-    //user click submit
     expect(screen.getByTestId("name-error").textContent).toBe(
       "Product name must be less than 25 characters"
     );
