@@ -7,33 +7,19 @@ export default function useFetch() {
 
   const deleteProduct = async (id) => {
     setIsLoading(true);
-    await fetch(`${BASE_URL}/${id}`, {
-      method: "DELETE",
-    });
+    await axios.delete(`${BASE_URL}/${id}`);
     setIsLoading(false);
   };
 
   const createProduct = async (product) => {
     setIsLoading(true);
-    await fetch(BASE_URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(product),
-    });
+    await axios.post(BASE_URL, product);
     setIsLoading(false);
   };
 
   const updateProduct = async (id, product) => {
     setIsLoading(true);
-    await fetch(`${BASE_URL}/${id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(product),
-    });
+    await axios.put(`${BASE_URL}/${id}`, product);
     setIsLoading(false);
   };
 
