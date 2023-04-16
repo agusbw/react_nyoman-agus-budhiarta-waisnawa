@@ -2,7 +2,7 @@
 
 GraphQL adalah sebuah bahasa query untuk API yang dapat menggantikan REST API. GraphQL memungkinkan client untuk mendapatkan data hanya dengan satu request, memungkinkan client untuk memilih data yang ingin diambil, dan menghindari over-fetching dan under-fetching data.
 
-Berikut adalah **3 Point** dari materi Introduction GraphQL and Apollo Client Setup **‼️**
+Berikut adalah **3 Point** dari materi GraphQL Query and Mutation **‼️**
 
 ## **1. Query**
 
